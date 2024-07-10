@@ -8,12 +8,12 @@ $spacing-data: (
     extra-wide: $space-unit * 5
 );
 
-@function spacing($varient: base) {
-    $fetched-value: map-get($spacing-data, $varient);
+@function spacing($variant: base) {
+    $fetched-value: map-get($spacing-data, $variant);
 
-    @if type-of($fetched-data) == number {
+    @if type-of($fetched-value) == number {
         @return $fetched-value;
     } @else {
-        @error 'Spacing varient not valid';
+        @error 'Spacing variant not found';
     }
 }

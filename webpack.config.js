@@ -66,6 +66,23 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'components/button.html',
+            template: './src/components/button.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'components/textfield.html',
+            template: './src/components/textfield.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'components/card.html',
+            template: './src/components/card.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'components/banner.html',
+            template: './src/components/banner.html',
+        }),
+
         new CleanWebpackPlugin(),
         
         new MiniCssExtractPlugin({
