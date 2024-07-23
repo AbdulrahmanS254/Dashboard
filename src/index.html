@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/html" src="{require('./index.js')}"></script>
     <title>الصفحة الرئيسية</title>
 </head>
+
 <body>
-    <div style="font-family: sans-serif;">
-        <h1>لورم ايبسوم هي طريقة فعالة للهبد و ما الى ذلك</h1>
-        <button>زر تجريبي</button>
-        <h2>Components list</h2>
-        <ul>
-            <li><a href="./components/actions.html">actions</a></li>
-            <li><a href="./components/banner.html">banner</a></li>
-            <li><a href="./components/button.html">button</a></li>
-            <li><a href="./components/card.html">card</a></li>
-            <li><a href="./components/help.html">help</a></li>
-            <li><a href="./components/list.html">list</a></li>
-            <li><a href="./components/summary.html">summary</a></li>
-            <li><a href="./components/tabs.html">tabs</a></li>
-            <li><a href="./components/textfield.html">textfield</a></li>
-            <li><a href="./components/upload.html">upload</a></li>
-            <li><a href="./components/sidebar.html">sidebar</a></li>
-            <li><a href="./components/table.html">table</a></li>
-            <li><a href="./components/chart.html">chart</a></li>
-        </ul>
+
+    <div class="page-container">
+        <div class="c-sidebar">
+            <div class="c-sidebar__control">
+                <a href="./index.html" class="c-sidebar__icon c-sidebar__logo c-sidebar__icon--large">
+                    <svg viewbox="0 0 35 35">
+                        <circle cx="17.5" cy="17.5" r="12" fill="transparent" stroke-width="10"></circle>
+                    </svg>
+                </a>
+                <a href="./add-product.html" class="c-sidebar__icon"><i class="c-icon c-icon--plus"></i></a>
+                <a href="#search" class="c-sidebar__icon"><i class="c-icon c-icon--search"></i></a>
+                <a href="#logout" class="c-sidebar__icon"><i class="c-icon c-icon--switch"></i></a>
+                <a href="#profile"
+                    class="c-sidebar__icon c-sidebar__icon--bottom c-sidebar__icon--large c-sidebar__icon--image">
+                    <img src="https://mighty.tools/mockmind-api/content/human/42.jpg" alt="">
+                </a>
+            </div>
+            <div class="c-sidebar__menu">
+                <h2 class="c-sidebar__title"><a href="./index.html">عربي</a></h2>
+                <nav class="c-sidebar__navigation">
+                    <a href="./index.html" class="c-sidebar__link">نظرة عامة<i class="c-icon c-icon--equalizer"></i></a>
+                    <a href="./products.html" class="c-sidebar__link">المنتجات<i class="c-icon c-icon--cart"></i></a>
+                    <a href="./users.html" class="c-sidebar__link">المستخدمين<i class="c-icon c-icon--users"></i></a>
+                    <a href="./orders.html" class="c-sidebar__link">الطلبات
+                        <i class="c-icon c-icon--file-text"></i></a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main-page">
+            <header class="home-intro">
+                <h2 class="welcome-tag">
+                    مرحباً احمد، اتمنى انك تقضي يوماً جميلاً
+                    <br>
+                </h2>
+
+                <summary></summary>
+            </header>
+
+            <actions></actions>
+
+            <div class="c-card">
+                <h3 class="c-card__title">ربط معلومات الشحن</h3>
+                <a href="#" class="c-card__action c-btn c-btn--primary">ربط معلومات الشحن</a>
+                <p class="c-card__desc">إنّ معلومات الشحن غير متوفرة، لقد سبق وقمت بإعداد موقعك بجعله يبيع أغراض فعلية،
+                    عليك
+                    بملأ معلومات الشحن في متجر حتى يتاح لعكاظ معرفة كيفية توفير الشحن لزبائنك</p>
+            </div>
+
+            <banner></banner>
+
+            <chart></chart>
+
+            <div class="c-tabs js-tabs">
+                <div class="c-tabs__control">
+                    <span class="c-tabs__tab js-tab-link is-active" data-index="orders">طلبات بحاجة لمراجعة</span>
+                    <span class="c-tabs__tab js-tab-link" data-index="products">منتجات على وشك النفاذ</span>
+                    <span class="c-tabs__tab js-tab-link" data-index="clients">زبائن جدد</span>
+                </div>
+                <div class="c-tabs__content">
+                    <div class="c-tabs__tabarea js-tabarea is-active" data-indexed="orders">
+                        <list></list>
+                    </div>
+                    <div class="c-tabs__tabarea js-tabarea" data-indexed="products">
+                        <list></list>
+                    </div>
+                    <div class="c-tabs__tabarea js-tabarea" data-indexed="clients">
+                        <list></list>
+                    </div>
+                </div>
+            </div>
+
+            <help></help>
+        </div>
     </div>
+
 </body>
+
 </html>
