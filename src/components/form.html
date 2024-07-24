@@ -1,0 +1,65 @@
+<form action="" class="c-form" name="add-product">
+    <div class="c-upload js-upload">
+        <header class="c-upload__header">
+            <h4 class="c-upload__title">صورة المنتج</h4>
+            <label for="upload-image" class="c-upload__label">ارفع الصورة</label>
+            <span class="c-upload__label c-upload__label--remove js-upload-remove">احذف الصورة</span>
+        </header>
+        <div class="c-upload__body">
+            <div class="c-upload__image"><img class="js-upload-placeholder"></div>
+            <input type="file" name="upload-image" id="upload-image" class="c-upload__field js-upload-value"
+                accept="image/*">
+            <span class="c-upload__subtitle">اسحب الصورة هنا لرفعها</span>
+        </div>
+    </div>
+
+    <div class="c-form__controls">
+        <div class="c-form__row">
+            <div class="c-textfield">
+                <label for="product-name" class="c-textfield__label">اسم المنتج</label>
+                <input type="text" class="c-textfield__input" name="product-name" id="product-name"
+                    placeholder="مثلاً: قميص ابيض" required>
+            </div>
+        </div>
+        <div class="c-form__row">
+            <div class="c-textfield">
+                <label for="product-price" class="c-textfield__label">سعر المنتج</label>
+                <input type="number" class="c-textfield__input" name="product-price" id="product-price"
+                    placeholder="$" required>
+            </div>
+            <div class="c-textfield">
+                <label for="product-price-2" class="c-textfield__label">السعر الثانوي</label>
+                <input type="number" class="c-textfield__input" name="product-price-2" id="product-price-2"
+                    placeholder="ريال" required>
+            </div>
+        </div>
+        <div class="c-form__row">
+            <div class="c-textfield">
+                <label for="product-desc" class="c-textfield__label">وصف المنتج</label>
+                <textarea class="c-textfield__textarea" name="product-desc" id="product-desc"
+                    placeholder="ادخل الوصف" required></textarea>
+            </div>
+        </div>
+        <div class="c-form__row">
+            <div class="c-textfield">
+                <label for="product-dims" class="c-textfield__label">الابعاد</label>
+                <input type="number" class="c-textfield__input" name="product-dims" id="product-dims">
+                <span class="c-textfield__hint">بالسنتيمتر</span>
+            </div>
+            <div class="c-textfield">
+                <label for="product-height" class="c-textfield__label"><br></label>
+                <input type="number" class="c-textfield__input" name="product-height" id="product-height">
+            </div>
+            <div class="c-textfield">
+                <label for="product-width" class="c-textfield__label"><br></label>
+                <input type="number" class="c-textfield__input" name="product-width" id="product-width">
+            </div>
+            <div class="c-textfield">
+                <label for="product-weight" class="c-textfield__label">الابعاد</label>
+                <input type="number" class="c-textfield__input" name="product-weight" id="product-weight">
+                <span class="c-textfield__hint">كجم</span>
+            </div>
+        </div>
+        <div class="c-form__row"></div>
+    </div>
+</form>

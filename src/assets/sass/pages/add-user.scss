@@ -1,0 +1,7 @@
+.c-form--column {
+    flex-direction: column;
+
+    .c-form__controls {
+        margin-right: 0 !important;
+    }
+}

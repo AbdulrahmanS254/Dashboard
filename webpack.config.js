@@ -42,7 +42,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: "asset/resource",
                 generator: {
-                    filename: "assets/images/[name].[ext]",
+                    filename: "assets/images/[name][ext]",
                 },
             },
 
@@ -51,7 +51,7 @@ module.exports = {
                 exclude: /images/,
                 type: "asset/resource",
                 generator: {
-                    filename: "assets/fonts/[name].[ext]",
+                    filename: "assets/fonts/[name][ext]",
                 },
             },
 
@@ -80,6 +80,32 @@ module.exports = {
                 "assets/js/chart",
             ],
         }),
+        new HtmlWebpackPlugin({
+            filename: "add-product.html",
+            template: "./src/add-product.html",
+            chunks: ["app", "assets/js/upload"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "products.html",
+            template: "./src/products.html",
+            chunks: ["app"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "users.html",
+            template: "./src/users.html",
+            chunks: ["app"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "orders.html",
+            template: "./src/orders.html",
+            chunks: ["app"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "add-user.html",
+            template: "./src/add-user.html",
+            chunks: ["app", "assets/js/upload"],
+        }),
+        // components //
         new HtmlWebpackPlugin({
             filename: "components/button.html",
             template: "./src/components/button.html",
@@ -145,6 +171,11 @@ module.exports = {
             template: "./src/components/chart.html",
             chunks: ["app", "assets/js/chart"],
         }),
+        new HtmlWebpackPlugin({
+            filename: "form.html",
+            template: "./src/components/form.html",
+            chunks: ["app"],
+        }),
 
         new CleanWebpackPlugin(),
 
@@ -155,7 +186,7 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, "./src/components/help.html"),
             location: "help",
-            template_filename: ['index.html'],
+            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html', 'odrers.html', 'add-user.html'],
         }),
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, "./src/components/summary.html"),
@@ -175,12 +206,17 @@ module.exports = {
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, "./src/components/chart.html"),
             location: "chart",
-            template_filename: ['index.html'],
+            template_filename: ['index.html', 'orders.html'],
         }),
         new HtmlWebpackPartialsPlugin({
             path: path.join(__dirname, "./src/components/list.html"),
             location: "list",
             template_filename: ['index.html'],
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path: path.join(__dirname, "./src/components/sidebar.html"),
+            location: "sidebar",
+            template_filename: ['index.html', 'add-product.html', 'products.html', 'users.html', 'orders.html', 'add-user.html'],
         }),
     ],
 
