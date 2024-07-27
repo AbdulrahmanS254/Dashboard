@@ -2,3 +2,14 @@
     width: 500px;
     margin-right: spacing("wide");
 }
+
+
+@media (max-width: 1024px) {
+    .c-form {
+        flex-wrap: wrap;
+    }
+
+    .c-upload +.c-form__controls {
+        margin-right: 0;
+    }
+}

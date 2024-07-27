@@ -1,6 +1,10 @@
 $sidebar-control-width: 35px;
 $sidebar-icon-size: 20px;
 $sidebar-logo-height: $sidebar-control-width;
+$sidebar-normal-padding: spacing('small');
+$sidebar-dense-padding: spacing();
+$shift: $sidebar-normal-padding - $sidebar-dense-padding;
+$dense-width: $sidebar-control-width + ($sidebar-dense-padding * 2) + $shift;
 
 body {
     background-color: #fff;
@@ -13,8 +17,8 @@ body {
     top: 0;
     right: 0;
     display: flex;
-    background-color: $color-background;
     padding: spacing('wide') spacing('small');
+    z-index: 10;
 }
 
 .c-sidebar__control {
@@ -81,4 +85,51 @@ body {
     }
     flex-direction: row-reverse;
     justify-content: flex-end;
+}
+
+.c-sidebar__backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: $layout-sidebar;
+    background-color: $color-background;
+    z-index: -5;
+}
+
+// responsive
+@media (max-width: 768px) {
+    .c-sidebar {
+        overflow: hidden;
+        width: $dense-width;
+        padding-left: 0;
+        transform: translateX($shift);
+        transition: transform 0.2s 0.2s, width 0s 0.2s, padding-left 0s 0.2s;
+    }
+
+    .c-sidebar__backdrop {
+        transform: scaleX(calc($dense-width / $layout-sidebar));
+        transform-origin: 100% 0;
+        transition: transform 0.2s;
+    }
+
+    .c-sidebar__menu {
+        opacity: 0;
+        transition: opacity 200ms 0ms;
+    }
+
+    .c-sidebar:hover {
+        width: $layout-sidebar;
+        overflow: visible;
+        padding-left: $sidebar-normal-padding;
+        transform: scaleX(1);
+        transition-delay: 0;
+        transition: transform 0.2s;
+        .c-sidebar__backdrop {
+            transform: scaleX(1);
+        }
+        .c-sidebar__menu {
+            opacity: 1;
+        }
+    }
 }
